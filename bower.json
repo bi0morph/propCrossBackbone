@@ -1,0 +1,31 @@
+{
+  "name": "PropertyCross Backbone.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": ">= 1.7.0",
+    "backbone": ">= 1.1.0",
+    "underscore": ">= 1.5.0"
+  },
+  "homepage": "https://github.com/bi0morph/propCrossBackbone",
+  "authors": [
+    "Ruslan Ustiuhov <rusustyugov@gmail.com>"
+  ],
+  "description": "Start in JavaScript",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "backbone",
+    "js",
+    "propertyCross"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
