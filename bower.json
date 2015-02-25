@@ -25,6 +25,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "app/js/libs",
     "test",
     "tests"
   ]
