@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PropertyCross Backbone.js</title>
+	<link rel="stylesheet" type="text/css" href="js/libs/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="some-app-container">
+		<header>
+			<h1>PropertyCross</h1>
+			<button type="button">Faves</button>
+		</header>
+		<p class="info-text">
+			Use the form below to search for houses to buy. You can search by place-name, postcode, or click 'My location', to search in your current location!
+		</p>
+		<form id="some-app-search-form">
+			<input type="text" value="" name="text" placeholder="place-name or postcode">
+			<button type="button" id="some-app-go-go">Go</button>
+			<button type="button" id="my-location">My location</button>
+		</form>
+		<div id="some-app-result">
+			<div id="some-app-search-initial">
+				<h2>Recent searches:</h2>
+				<ul>
+					<li> Search #1 (12)</li>
+					<li> Search #2 (355)</li>
+					<li> Search #3 (45)</li>
+				</ul>	
+			</div>
+			<div id="some-app-search-error">
+				<p>
+					There was a problem with your search
+				</p>
+			</div>
+			<div id="some-app-search-location-list">
+				<h2>Please select a location below:</h2>
+				<ul>
+					<li> Location #1 </li>
+					<li> Location #2 </li>
+					<li> Location #3 </li>
+				</ul>	
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="js/libs/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="js/libs/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="js/libs/backbone/backbone.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/router.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+
+	</script>
+</body>
+</html>
