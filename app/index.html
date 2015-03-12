@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PropertyCross Backbone.js</title>
-	<link rel="stylesheet" type="text/css" href="js/libs/bootstrap/dist/css/bootstrap.min.css">
+  <title>PropertyCross Backbone.js</title>
+  <link rel="stylesheet" type="text/css" href="js/libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body>
-	<div id="some-app-container">
-		
-	</div>
+<body class="greeny-theme">
+  <div id="preloader" class="spinner-wrap">
+    <div class="spinner">
+      <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+    </div>  
+  </div>
+  
+  <div id="some-app-container">
+    
+  </div>
 
-	<script type="text/javascript" src="js/libs/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="js/libs/underscore/underscore-min.js"></script>
-	<script type="text/javascript" src="js/libs/backbone/backbone.js"></script>
-	
-	
-	<script type="text/template" id="some-app-search-view">
-		<header>
-			<h1><%= title %></h1>
-			<button type="button" class="show-faves">Faves</button>
-		</header>
-		<p class="info-text">
-			<%= infoText %>
-		</p>
-		<form id="some-app-search-form">
-			<input type="text" value="" name="text" placeholder="place-name or postcode">
-			<button type="button" class="some-app-do-search">Go</button>
-			<button type="button" class="get-my-location">My location</button>
-		</form>
-		<div id="some-app-search-result">
-		</div>
-	</script>
-	<script type="text/template" id="some-app-recent-searches">
-		<h2><%= title %></h2>
-		<ul>
-		</ul>	
-	</script>
-	
-	<script type="text/javascript" src="js/models/recentSearch.js"></script>
-	<script type="text/javascript" src="js/collections/recentSearches.js"></script>
-	
-	<script type="text/javascript" src="js/views/recentSearchView.js"></script>
-	<script type="text/javascript" src="js/views/recentSearchesView.js"></script>
-	<script type="text/javascript" src="js/views/searchView.js"></script>
-	<script type="text/javascript" src="js/router.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-	
-	<script type="text/template" id="some-app-search-result-tpl">
-		<div id="some-app-search-initial">
-			
-		</div>
-			<div id="some-app-search-error">
-				<p>
-					There was a problem with your search
-				</p>
-			</div>
-			<div id="some-app-search-location-list">
-				<h2>Please select a location below:</h2>
-				<ul>
-					<li> Location #1 </li>
-					<li> Location #2 </li>
-					<li> Location #3 </li>
-				</ul>	
-			</div>
-	</script>
+  <script type="text/javascript" src="js/libs/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/libs/underscore/underscore-min.js"></script>
+  <script type="text/javascript" src="js/libs/backbone/backbone.js"></script>
+  
+  
+  <script type="text/template" id="some-app-search-view">
+    <header>
+      <h1><%= title %></h1>
+      <button type="button" class="show-faves">Faves</button>
+    </header>
+    <p class="info-text">
+      <%= infoText %>
+    </p>
+    <form id="some-app-search-form">
+      <input type="text" value="" name="text" placeholder="place-name or postcode">
+      <button type="button" class="some-app-do-search">Go</button>
+      <button type="button" class="get-my-location">My location</button>
+    </form>
+    <div id="some-app-search-result">
+      <h2><%= resentSearch.title %></h2>
+      <ul>
+      </ul>
+    </div>
+  </script>
+  <script type="text/template" id="some-app-search-result-tpl">
+    <div id="some-app-search-initial">
+      
+    </div>
+      <div id="some-app-search-error">
+        <p>
+          There was a problem with your search
+        </p>
+      </div>
+      <div id="some-app-search-location-list">
+        <h2>Please select a location below:</h2>
+        <ul>
+          <li> Location #1 </li>
+          <li> Location #2 </li>
+          <li> Location #3 </li>
+        </ul> 
+      </div>
+  </script>
+
+
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/router.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  
 </body>
 </html>

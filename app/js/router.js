@@ -1,8 +1,10 @@
-var AppRouter = Backbone.Router.extend({
+
+app.Router = Backbone.Router.extend({
     routes: {
         "*actions": "defaultRoute"
     },
     defaultRoute: function defaultRoute(actions){
-        app.searchView = new SearchView({el: $('#some-app-container')});
-    }    
+        console.log(actions);
+        //app.mainView = new app.MainView({el: $('#some-app-container')});
+    }
 });
