@@ -2,8 +2,7 @@
   "name": "PropertyCross Backbone.js",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "~3.3.2",
-    "backbone": null
+    "backbone.localStorage": "~1.1.16"
   },
   "homepage": "https://github.com/bi0morph/propCrossBackbone",
   "authors": [
