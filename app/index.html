@@ -51,17 +51,13 @@
       <%= infoText %>
     </p>
     <form id="some-app-search-form">
-      <input type="text" value="" name="text" placeholder="place-name or postcode">
+      <input type="text" value="" class="searchQuery" name="text" placeholder="place-name or postcode">
       <button type="button" class="some-app-do-search">Go</button>
       <button type="button" class="get-my-location">My location</button>
     </form>
     <div id="some-app-search-result">
       <h2><%= recentSearchTitle %></h2>
-      <ul>
-        <% _.each(recentSearchList, function(item) { %> 
-          <li>Search "<%= item.text %>"(<%= item.qnt %>)</li>
-        <% }); %>
-      </ul>
+      <ul></ul>
     </div>
   </script>
   <script type="text/template" id="some-app-search-result-tpl">
@@ -87,8 +83,12 @@
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/models/defaultModel.js"></script>
   <script type="text/javascript" src="js/models/mainModel.js"></script>
+  <script type="text/javascript" src="js/models/recentSearchModel.js"></script>
+  <script type="text/javascript" src="js/models/recentSearchesCollection.js"></script>
   <script type="text/javascript" src="js/views/defaultView.js"></script>
   <script type="text/javascript" src="js/views/mainView.js"></script>
+  <script type="text/javascript" src="js/views/recentSearchView.js"></script>
+  <script type="text/javascript" src="js/views/recentSearchesView.js"></script>
   <script type="text/javascript" src="js/router.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   

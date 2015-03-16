@@ -15,7 +15,7 @@ app.views.DefaultView = Backbone.View.extend({
     },
     render: function render(){
         var variables = this.model.toJSON();
-
+        
         this.$el.html( _.template( this.template)(variables) );
         return this;
     },

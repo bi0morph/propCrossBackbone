@@ -1,24 +1,17 @@
-var RecentSearchesView = Backbone.View.extend({
-	template: _.template($("#some-app-recent-searches").html()),
-    initialize: function () {
-    	this.render();
+app.views.RecentSearchesView = Backbone.View.extend({
+    initialize: function initialize() {
+        this.listenTo( this.collection, 'add', this.render);
+        this.collection.fetch();
     },
-    render: function(){
-    	var variables = {
-    		title : 'Recent searches:'
-    	};
-    	this.$el.html( this.template(variables) );
-
-    	var $searchList = this.$el.find('ul');
-
-    	this.collection.each(function(resentSearch){
-	        var $li = $('<li>');
-	        var personView = new RecentSearchView({ model: resentSearch , el: $li});
-
-            $searchList.append($li);
-	    }, this);
-	    
-	    return this;
-    	
+    render: function render(){
+        var $docFragment = $(document.createDocumentFragment());
+        this.collection.each(function(resentSearch){
+            var personView = new app.views.RecentSearchView({
+                model: resentSearch,
+            });
+            $docFragment.append( personView.render().el );
+        }, this);
+        
+        this.$el.html($docFragment);
     },
 });
