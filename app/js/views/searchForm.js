@@ -1,9 +1,11 @@
-app.views.MainView = app.views.DefaultView.extend({
+app.views.SearchForm = app.views.Default.extend({
     template: $("#some-app-search-view").html(),
     events: {
+
     	'click .some-app-do-search': 'doSearch',
     	'keypress .searchQuery': 'doSearch',
     },
+
     doSearch: function doSearch(event) {
 		if ((event.type === 'keypress' 
     		&& event.which === 13)
@@ -40,8 +42,8 @@ app.views.MainView = app.views.DefaultView.extend({
     	};
     },
     showRecent: function showRecent() {
-    	var recentSearchesColection = new app.models.RecentSearchesCollection();
-        var recentSearchesView = new app.views.RecentSearchesView({
+    	var recentSearchesColection = new app.collections.RecentSearches();
+        var recentSearchesView = new app.views.RecentSearches({
             collection: recentSearchesColection,
             el: $("#some-app-search-result ul")
         });

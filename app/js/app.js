@@ -1,5 +1,6 @@
 var app = {
 	models: {},
+	collections: {},
 	roters: {},
 	views: {},
 	preloader: {

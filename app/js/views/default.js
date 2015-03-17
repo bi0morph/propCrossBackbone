@@ -1,4 +1,4 @@
-app.views.DefaultView = Backbone.View.extend({
+app.views.Default = Backbone.View.extend({
     initialize: function initialize() {
     	var _this = this; 
     	

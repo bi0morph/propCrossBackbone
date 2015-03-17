@@ -35,12 +35,6 @@
   <div id="some-app-container">
     
   </div>
-
-  <script type="text/javascript" src="js/libs/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="js/libs/underscore/underscore-min.js"></script>
-  <script type="text/javascript" src="js/libs/backbone/backbone.js"></script>
-  <script type="text/javascript" src="js/libs/backbone.localStorage/backbone.localStorage.js"></script>
-  
   
   <script type="text/template" id="some-app-search-view">
     <header>
@@ -79,16 +73,24 @@
       </div>
   </script>
 
+  <script type="text/javascript" src="js/libs/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/libs/underscore/underscore-min.js"></script>
+  <script type="text/javascript" src="js/libs/backbone/backbone.js"></script>
+  <script type="text/javascript" src="js/libs/backbone.localStorage/backbone.localStorage.js"></script>
 
   <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/models/defaultModel.js"></script>
-  <script type="text/javascript" src="js/models/mainModel.js"></script>
-  <script type="text/javascript" src="js/models/recentSearchModel.js"></script>
-  <script type="text/javascript" src="js/models/recentSearchesCollection.js"></script>
-  <script type="text/javascript" src="js/views/defaultView.js"></script>
-  <script type="text/javascript" src="js/views/mainView.js"></script>
-  <script type="text/javascript" src="js/views/recentSearchView.js"></script>
-  <script type="text/javascript" src="js/views/recentSearchesView.js"></script>
+
+  <!-- Models -->
+  <script type="text/javascript" src="js/models/default.js"></script>
+  <script type="text/javascript" src="js/models/searchForm.js"></script>
+  <script type="text/javascript" src="js/models/recentSearch.js"></script>
+  <script type="text/javascript" src="js/models/recentSearches.js"></script>
+  <!-- View -->
+  <script type="text/javascript" src="js/views/default.js"></script>
+  <script type="text/javascript" src="js/views/searchForm.js"></script>
+  <script type="text/javascript" src="js/views/recentSearch.js"></script>
+  <script type="text/javascript" src="js/views/recentSearches.js"></script>
+  
   <script type="text/javascript" src="js/router.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   

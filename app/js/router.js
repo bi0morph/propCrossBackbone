@@ -4,11 +4,13 @@ app.Router = Backbone.Router.extend({
     },
     defaultRoute: function defaultRoute(actions){
         app.preloader.show();
-        var mainModel = new app.models.MainModel();
-        app.views.mainView = new app.views.MainView({
+        
+        var searchFormModel = new app.models.SearchForm();
+        app.views.searchForm = new app.views.SearchForm({
         	el: $('#some-app-container'),
-            model: mainModel
+            model: searchFormModel
         });
+
         app.preloader.hide();
     }
 });

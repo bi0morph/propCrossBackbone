@@ -1,4 +1,4 @@
-app.views.RecentSearchView = Backbone.View.extend({
+app.views.RecentSearch = Backbone.View.extend({
 	tagName: 'li',
 	template: "Search #<%= num %> (<%= qnt %>)",
 	render: function render(){
