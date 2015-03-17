@@ -45,26 +45,21 @@
       <%= infoText %>
     </p>
     <form id="some-app-search-form">
-      <input type="text" value="" class="searchQuery" name="text" placeholder="place-name or postcode">
+      <input type="text" value="<%= lastSearchQuery %>" class="searchQuery" name="text" placeholder="place-name or postcode">
       <button type="button" class="some-app-do-search">Go</button>
       <button type="button" class="get-my-location">My location</button>
     </form>
     <div id="some-app-search-result">
-      <h2><%= recentSearchTitle %></h2>
-      <ul></ul>
     </div>
   </script>
+  <script type="text/template" id="some-app-search-result-list">
+    <h2><%= listТitle %></h2>
+    <ul></ul>
+  </script>
+  
   <script type="text/template" id="some-app-search-result-tpl">
-    <div id="some-app-search-initial">
-      
-    </div>
-      <div id="some-app-search-error">
-        <p>
-          There was a problem with your search
-        </p>
-      </div>
       <div id="some-app-search-location-list">
-        <h2>Please select a location below:</h2>
+        <h2></h2>
         <ul>
           <li> Location #1 </li>
           <li> Location #2 </li>

@@ -1,16 +1,21 @@
 app.Router = Backbone.Router.extend({
     routes: {
-        "*actions": "defaultRoute"
+        "fave/" : "faveList",
+        "*actions": "searchForm",
+        "search_query/:searchQuery" : "searchResult",
     },
-    defaultRoute: function defaultRoute(actions){
+    searchResult: function searchResult (searchQuery) {
         app.preloader.show();
-        
+    },
+    faveList: function faveList () {
+        console.log('faveList');
+        alert('faveList');
+    },
+    searchForm: function searchForm(actions){
         var searchFormModel = new app.models.SearchForm();
         app.views.searchForm = new app.views.SearchForm({
-        	el: $('#some-app-container'),
+            el: $('#some-app-container'),
             model: searchFormModel
         });
-
-        app.preloader.hide();
-    }
+    },
 });
