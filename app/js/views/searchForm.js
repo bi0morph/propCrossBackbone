@@ -8,7 +8,7 @@ app.views.SearchForm = app.views.Default.extend({
     resultEl: null,
     resultView: null,
     navigateToFave: function navigateToFave () {
-        app.router.navigate('fave/', {trigger: true})
+        app.router.navigate('fave/', {trigger: true});
     },
     doSearch: function doSearch(event) {
 		if ((event.type === 'keypress' 

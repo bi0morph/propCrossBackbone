@@ -14,7 +14,7 @@ app.Router = Backbone.Router.extend({
     searchForm: function searchForm(actions){
         var searchFormModel = new app.models.SearchForm();
         app.views.searchForm = new app.views.SearchForm({
-            el: $('#some-app-container'),
+            el: $('#search-form-container'),
             model: searchFormModel
         });
     },
