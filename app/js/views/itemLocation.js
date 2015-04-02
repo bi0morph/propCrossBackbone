@@ -1,7 +1,7 @@
-app.views.RecentSearch = Backbone.View.extend({
+app.views.ItemLocation = Backbone.View.extend({
 	tagName: 'li',
-	template: 'Search #<%= num %>: "<%= text %>" (<%= qnt %>)',
-	render: function render(){
+	template: 'Location: <%= place_name %> "<%= long_title %>"',
+	render: function render() {
         var variables = this.model.toJSON();
         this.$el.html( _.template( this.template)(variables) );
         return this;
