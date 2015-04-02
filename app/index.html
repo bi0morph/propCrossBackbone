@@ -33,7 +33,7 @@
   </div>
   
   <div id="search-form-container"></div>
-  <div id="search-result-container"></div>
+  <div id="search-result-container" style="display: none;"></div>
   
   <script type="text/template" id="some-app-search-view">
     <header>
@@ -56,15 +56,23 @@
     <ul></ul>
   </script>
   
-  <script type="text/template" id="some-app-search-result-tpl">
-      <div id="some-app-search-location-list">
-        <h2></h2>
-        <ul>
-          <li> Location #1 </li>
-          <li> Location #2 </li>
-          <li> Location #3 </li>
-        </ul> 
-      </div>
+  <script type="text/template" id="search-result-list">
+    <header>
+      <%= numOnPage %> of <%= matches %> matches
+    </header>
+    <ul>
+      <% _.each(items, function(item) { %> 
+        <li>
+          <img src="<%= item.thumb_url %>" width="<%= item.thumb_width %>" height="<%= item.thumb_height %>">
+          <p class="price">
+            <%= item.price_formatted  %>
+          </p>
+          <p class="info">
+            <%= item.title %>
+          </p>
+        </li>
+      <% });%>
+    </ul>
   </script>
 
   <script type="text/javascript" src="js/libs/jquery/dist/jquery.min.js"></script>
@@ -81,6 +89,8 @@
   <script type="text/javascript" src="js/models/recentSearches.js"></script>
   <script type="text/javascript" src="js/models/itemLocation.js"></script>
   <script type="text/javascript" src="js/models/listLocations.js"></script>
+  <script type="text/javascript" src="js/models/itemResult.js"></script>
+  <script type="text/javascript" src="js/models/listResults.js"></script>
   <!-- View -->
   <script type="text/javascript" src="js/views/default.js"></script>
   <script type="text/javascript" src="js/views/searchForm.js"></script>
@@ -88,7 +98,9 @@
   <script type="text/javascript" src="js/views/recentSearches.js"></script>
   <script type="text/javascript" src="js/views/itemLocation.js"></script>
   <script type="text/javascript" src="js/views/listLocations.js"></script>
+  <script type="text/javascript" src="js/views/listResults.js"></script>
   
+
   <script type="text/javascript" src="js/router.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   

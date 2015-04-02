@@ -42,14 +42,14 @@ app.views.SearchForm = app.views.Default.extend({
                 state: 'error',
                 lastSearchQtnItems: 0
             };
-        console.log(data.response.locations);
+        console.log(data.response);
        
         newAttr.lastSearchQuery = data.request.location;
-        if (successCodes.indexOf(responceCode)>-1) {
-            if(data.response.listings) {
-                newAttr.state = 'listResults';
-                newAttr.lastSearchQtnItems = data.response.listings.length;
-            }
+        if (successCodes.indexOf(responceCode)>-1 && data.response.listings) {
+            newAttr.state = 'listResults';
+            newAttr.lastSearchQtnItems = data.response.listings.length;
+            
+            app.collections.listResults = new app.collections.ListResults(data.response.listings);
         }else if(otherCodes.indexOf(responceCode)>-1){
             newAttr.state = 'listLocations';
             app.collections.listLocationsCollection = new app.collections.ListLocations(data.response.locations);
@@ -106,9 +106,7 @@ app.views.SearchForm = app.views.Default.extend({
                 app.collections.recentSearchesCollection.add(recentSearch);
                 recentSearch.save();
                 app.collections.recentSearchesCollection.sort();
-                
-                // TODO: show result
-                $resultEl.html('list result will be show in other block');
+                this.showListResults();
             break;
         }
         this.resultView = resultView;
@@ -116,4 +114,15 @@ app.views.SearchForm = app.views.Default.extend({
 
     	return this;
     },
+    showListResults: function showListResults() {
+        
+        app.views.listResults = new app.views.ListResults({
+            el: $('#search-result-container'),
+            collection: app.collections.listResults,
+        });
+
+        this.$el.hide();
+        
+        app.views.listResults.render().$el.show();
+    }
 });
