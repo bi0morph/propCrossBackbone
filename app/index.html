@@ -32,47 +32,67 @@
     </div>  
   </div>
   
-  <div id="search-form-container"></div>
-  <div id="search-result-container" style="display: none;"></div>
+  <div id="search-form-container" class="container-fluid"></div>
+  <div id="search-result-container" style="display: none;" class="container-fluid"></div>
   
   <script type="text/template" id="some-app-search-view">
-    <header>
-      <h1><%= title %></h1>
-      <button type="button" class="show-faves">Faves</button>
+    <header class="row">
+      <div class="col-xs-8">
+       <h1><%= title %></h1>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" class="show-faves btn btn-default pull-right">Faves</button>
+      </div>
     </header>
-    <p class="info-text">
-      <%= infoText %>
-    </p>
-    <form id="some-app-search-form">
-      <input type="text" value="<%= lastSearchQuery %>" class="searchQuery" name="text" placeholder="place-name or postcode">
-      <button type="button" class="some-app-do-search">Go</button>
-      <button type="button" class="get-my-location">My location</button>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="info-text">
+          <%= infoText %>
+        </p>
+      </div>
+    </div>
+    <form id="some-app-search-form" class="form-inline">
+      <div class="form-group">
+        <input type="text" value="<%= lastSearchQuery %>" class="searchQuery
+        form-control" name="text" placeholder="place-name or postcode">
+        <button type="button" class="some-app-do-search btn btn-default">Go</button>
+        <button type="button" class="get-my-location btn btn-default">My location</button>
+      </div>
     </form>
-    <div id="some-app-search-result">
+    <div id="some-app-search-result" class="row">
     </div>
   </script>
   <script type="text/template" id="some-app-search-result-list">
-    <h2><%= listТitle %></h2>
-    <ul></ul>
+    <div class="col-xs-12">
+      <h2><%= listТitle %></h2>
+      <ul class="list-unstyled"></ul>
+    </div>
   </script>
   
   <script type="text/template" id="search-result-list">
-    <header>
-      <%= numOnPage %> of <%= matches %> matches
+    <header class="row">
+      <div class="col-xs-12 text-center">
+        <%= numOnPage %> of <%= matches %> matches
+      </div>
     </header>
-    <ul>
-      <% _.each(items, function(item) { %> 
-        <li>
-          <img src="<%= item.thumb_url %>" width="<%= item.thumb_width %>" height="<%= item.thumb_height %>">
-          <p class="price">
-            <%= item.price_formatted  %>
-          </p>
-          <p class="info">
-            <%= item.title %>
-          </p>
-        </li>
-      <% });%>
-    </ul>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-unstyled">
+        <% _.each(items, function(item) { %> 
+          <li>
+            <img src="<%= item.thumb_url %>" width="<%= item.thumb_width %>" height="<%= item.thumb_height %>">
+            <p class="price">
+              <%= item.price_formatted  %>
+            </p>
+            <p class="info">
+              <%= item.title %>
+            </p>
+          </li>
+        <% });%>
+      </ul>
+      </div>
+    </div>
+    
   </script>
 
   <script type="text/javascript" src="js/libs/jquery/dist/jquery.min.js"></script>
