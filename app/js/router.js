@@ -30,20 +30,14 @@ app.Router = Backbone.Router.extend({
             .fail(app.views.searchForm.onSearchFailHandler);
     },
     faveList: function faveList () {
-        console.log('faveList');
         alert('faveList');
     },
     searchForm: function searchForm(actions){
-        app.preloader.show();
-        if (!app.views.searchForm) {
-            var searchFormModel = new app.models.SearchForm();
-            app.views.searchForm = new app.views.SearchForm({
-                el: $('#search-form-container'),
-                model: searchFormModel
-            });
-        }else{
-            app.views.searchForm.render();
-        };
-        
+        console.log('searchForm');
+        var searchFormModel = new app.models.SearchForm();
+        app.views.searchForm = new app.views.SearchForm({
+            el: $('#search-form-container'),
+            model: searchFormModel
+        });
     },
 });

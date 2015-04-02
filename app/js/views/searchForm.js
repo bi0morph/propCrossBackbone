@@ -73,6 +73,8 @@ app.views.SearchForm = app.views.Default.extend({
                     el: $resultEl.find('ul')
                 });
                 resultView.render();
+                $('#search-result-container').hide();
+                this.$el.show();
             break;
             case 'listLocations':
                 titleHtml = _.template($('#some-app-search-result-list').html())({
@@ -85,6 +87,8 @@ app.views.SearchForm = app.views.Default.extend({
                     el: $resultEl.find('ul')
                 });
                 listLocationsView.render();
+                $('#search-result-container').hide();
+                this.$el.show();
             break;
             case 'listResults':
                 // save to recent searches
@@ -102,7 +106,9 @@ app.views.SearchForm = app.views.Default.extend({
         }
         this.resultView = resultView;
         this.resultEl = $resultEl[0];
+        
         app.preloader.hide();
+
     	return this;
     },
     showListResults: function showListResults() {
