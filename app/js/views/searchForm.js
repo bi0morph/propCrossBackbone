@@ -14,23 +14,14 @@ app.views.SearchForm = app.views.Default.extend({
 		if ((event.type === 'keypress' 
     		&& event.which === 13)
     		|| event.type === 'click') {
+
+            var query = $(this.el).find('.searchQuery').val();
             
-            // fetchByPlaceName
-            var url = 'http://api.nestoria.co.uk/api?country=uk&pretty=1&action=search_listings&encoding=json&listing_type=buy&page=1&place_name=',
-                query = $(this.el).find('.searchQuery').val(),
-                jqXHR;
             if (query.length > 2 &&
                 this.model.get('lastSearchQuery') != query) {
-                app.preloader.show();
-                jqXHR = $.ajax({
-                    context: this,
-                    url: url + query,
-                    method: 'GET',
-                    dataType: "jsonp"
-                }).done(this.onSearchDoneHandler)
-                    .fail(this.onSearchFailHandler);    
+                app.router.navigate('search_query/'+ encodeURI(query), {trigger: true});
             };
-    		return false;
+            return false;
     	};
     },
     onSearchDoneHandler : function onSearchDoneHandler (data, jqXHR) {
@@ -111,7 +102,7 @@ app.views.SearchForm = app.views.Default.extend({
         }
         this.resultView = resultView;
         this.resultEl = $resultEl[0];
-
+        app.preloader.hide();
     	return this;
     },
     showListResults: function showListResults() {
